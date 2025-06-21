@@ -1,0 +1,58 @@
+<mat-toolbar color="primary" class="header">
+  <div class="left-menu">
+    <button mat-button routerLink="/">Pagina inicial</button>
+    <button mat-button routerLink="/sobre">Sobre</button>
+    <button mat-button routerLink="/cadastro">Cadastrar no site</button>
+    <button class="protected-route" mat-button routerLink="/sinteses">
+      Sinteses
+    </button>
+    <!-- Novo botão -->
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="login-fields" *ngIf="!loggedIn">
+    <span class="login-label">Login:</span>
+    <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'">
+      <input matInput placeholder="Email" [(ngModel)]="email" />
+    </mat-form-field>
+    <!-- <mat-form-field appearance="outline" class="login-input">
+      <input matInput placeholder="Email" [(ngModel)]="email" />
+    </mat-form-field> -->
+    <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'">
+      <input
+        matInput
+        placeholder="Senha"
+        [(ngModel)]="password"
+        type="password"
+      />
+    </mat-form-field>
+    <button
+      mat-flat-button
+      color="accent"
+      class="login-button"
+      (click)="login()"
+    >
+      Entrar
+    </button>
+  </div>
+  <div class="login-fields" *ngIf="loggedIn">
+    <span class="login-label">Bem vindo</span>
+    <span class="credits-label">Creditos:</span>
+    <span class="credits-label">999</span>
+    <button
+      mat-flat-button
+      color="accent"
+      class="login-button"
+      (click)="openPaymentDialog()"
+    >
+      Adicionar creditos
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer">Para mais informações entre em contato: ????</footer>

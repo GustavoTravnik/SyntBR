@@ -1,0 +1,25 @@
+<div class="cadastro-container">
+  <h2>Criação de Conta</h2>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Nome *</mat-label>
+    <input matInput [(ngModel)]="name" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Email *</mat-label>
+    <input matInput type="email" [(ngModel)]="email" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Senha *</mat-label>
+    <input matInput type="password" [(ngModel)]="password" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>CPF (opcional)</mat-label>
+    <input matInput [(ngModel)]="cpf" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="registrar()">Registrar</button>
+</div>
