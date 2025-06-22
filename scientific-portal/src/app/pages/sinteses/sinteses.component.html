@@ -1,1 +1,83 @@
-<p>sinteses works!</p>
+<div *ngIf="!coursesOppened">
+  <mat-card class="course-welcome">
+    <h1>Welcome to Our Courses</h1>
+    <p>
+      Discover a learning experience designed to be practical, engaging, and
+      structured for your growth.
+    </p>
+  </mat-card>
+
+  <mat-card class="course-section">
+    <h2>📚 What You'll Learn</h2>
+    <ul>
+      <li>Clear, modular lessons with real-world examples</li>
+      <li>Step-by-step explanations for beginners and advanced learners</li>
+      <li>Interactive content including text, video, and quizzes</li>
+    </ul>
+  </mat-card>
+
+  <mat-card class="course-section">
+    <h2>🧩 Course Structure</h2>
+    <p>Each course is divided into modules. Every module contains:</p>
+    <mat-list>
+      <mat-list-item
+        ><strong>▶️ Videos:</strong> For guided walkthroughs</mat-list-item
+      >
+      <mat-list-item
+        ><strong>📄 Texts:</strong> With detailed explanations</mat-list-item
+      >
+      <mat-list-item
+        ><strong>📝 Exercises:</strong> Practice and apply your
+        knowledge</mat-list-item
+      >
+      <mat-list-item
+        ><strong>✅ Final Notes:</strong> Key takeaways and next
+        steps</mat-list-item
+      >
+    </mat-list>
+  </mat-card>
+
+  <mat-card class="course-section">
+    <h2>🎯 Who is This For?</h2>
+    <p>These courses are perfect for:</p>
+    <ul>
+      <li>Developers at all levels who want to strengthen their skills</li>
+      <li>People preparing for tech interviews</li>
+      <li>Anyone interested in learning through a structured approach</li>
+    </ul>
+  </mat-card>
+
+  <mat-card class="course-cta">
+    <h2>🚀 Ready to Start?</h2>
+    <button (click)="setCoursesOppened()" mat-raised-button color="primary">
+      Explore Courses
+    </button>
+  </mat-card>
+</div>
+
+<div *ngIf="coursesOppened">
+  <mat-card class="courses-header">
+    <h1>📚 Available Courses</h1>
+    <p>Explore our catalog and start learning today.</p>
+  </mat-card>
+
+  <div class="course-list">
+    <mat-card class="course-item" *ngFor="let course of courses">
+      <div class="course-content">
+        <div class="course-info">
+          <h2>{{ course.name }}</h2>
+          <p>{{ course.description }}</p>
+        </div>
+        <div class="course-action">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="accessOrBuyCourse(course)"
+          >
+            Acesse por {{ course.price }} creditos
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

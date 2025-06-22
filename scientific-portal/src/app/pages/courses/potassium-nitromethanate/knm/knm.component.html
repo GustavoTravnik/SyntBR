@@ -1,1 +1,44 @@
-<p>knm works!</p>
+<mat-card class="course-header">
+  <h1>{{ coursePage.title }}</h1>
+  <p>{{ coursePage.description }}</p>
+</mat-card>
+
+<div class="modules-list">
+  <mat-accordion>
+    <mat-expansion-panel
+      *ngFor="let module of coursePage.courseModules | orderBy: 'order'"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ module.title }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ module.contentType === "video" ? "🎥 Video" : "📄 Text" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>
+        <strong>{{ module.description }}</strong>
+      </p>
+
+      <ng-container *ngIf="module.contentType === 'video'">
+        <div
+          class="video-wrapper"
+          [innerHTML]="module.content.htmlContent"
+        ></div>
+      </ng-container>
+
+      <ng-container *ngIf="module.contentType === 'text'">
+        <div
+          class="text-content"
+          [innerHTML]="module.content.htmlContent"
+        ></div>
+      </ng-container>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<mat-card class="final-considerations" *ngIf="coursePage.finalConsiderations">
+  <h2>Final Considerations</h2>
+  <p>{{ coursePage.finalConsiderations }}</p>
+</mat-card>

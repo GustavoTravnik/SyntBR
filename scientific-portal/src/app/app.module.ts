@@ -17,6 +17,11 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { PaymentDialogComponent } from './payment-dialog/payment-dialog.component';
 import { KnmComponent } from './pages/courses/potassium-nitromethanate/knm/knm.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { OrderByPipe } from './pipes/order-by.pipe';
+import { MatListModule } from '@angular/material/list';
+import { ConfirmPurchaseModalComponent } from './confirm-purchase-modal/confirm-purchase-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,8 @@ import { KnmComponent } from './pages/courses/potassium-nitromethanate/knm/knm.c
     CadastroComponent,
     PaymentDialogComponent,
     KnmComponent,
+    OrderByPipe,
+    ConfirmPurchaseModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +45,9 @@ import { KnmComponent } from './pages/courses/potassium-nitromethanate/knm/knm.c
     MatFormFieldModule,
     FormsModule,
     MatDialogModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

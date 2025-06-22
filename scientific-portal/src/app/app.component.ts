@@ -18,19 +18,18 @@ export class AppComponent {
     public auth: AuthService,
     private dialog: MatDialog,
     private router: Router,
-    private userService: UserService,
   ) {
     const loggedUser = localStorage.getItem('token');
     if (loggedUser) {
     }
   }
 
-  get loggedIn() {
+  loggedIn() {
     return this.auth.isLoggedIn();
   }
 
-  login() {
-    const success = this.auth.login(this.email, this.password);
+  async login() {
+    const success = await this.auth.login(this.email, this.password);
     if (!success) {
       alert('Login inválido.');
     }
@@ -52,5 +51,9 @@ export class AppComponent {
         console.log('Valor informado:', result);
       }
     });
+  }
+
+  getCredits() {
+    return (this.auth.getLoggedUser() as any)?.credits || 0;
   }
 }

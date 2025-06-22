@@ -1,0 +1,1 @@
+INSERT INTO `users_courses`(`id`, `user_id`, `course_id`) VALUES ('[value-1]','[value-2]','[value-3]')

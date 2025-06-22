@@ -10,15 +10,11 @@
   </div>
 
   <div class="spacer"></div>
-
-  <div class="login-fields" *ngIf="!loggedIn">
+  <div class="login-fields" *ngIf="!loggedIn()">
     <span class="login-label">Login:</span>
     <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'">
       <input matInput placeholder="Email" [(ngModel)]="email" />
     </mat-form-field>
-    <!-- <mat-form-field appearance="outline" class="login-input">
-      <input matInput placeholder="Email" [(ngModel)]="email" />
-    </mat-form-field> -->
     <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'">
       <input
         matInput
@@ -36,10 +32,10 @@
       Entrar
     </button>
   </div>
-  <div class="login-fields" *ngIf="loggedIn">
+  <div class="login-fields" *ngIf="loggedIn()">
     <span class="login-label">Bem vindo</span>
     <span class="credits-label">Creditos:</span>
-    <span class="credits-label">999</span>
+    <span class="credits-label">{{ getCredits() }}</span>
     <button
       mat-flat-button
       color="accent"
@@ -47,6 +43,14 @@
       (click)="openPaymentDialog()"
     >
       Adicionar creditos
+    </button>
+    <button
+      mat-flat-button
+      color="primary"
+      class="login-button"
+      (click)="logout()"
+    >
+      Sair
     </button>
   </div>
 </mat-toolbar>

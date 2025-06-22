@@ -1,0 +1,59 @@
+.course-welcome {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.course-section {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.course-section h2 {
+  margin-bottom: 12px;
+}
+
+.course-cta {
+  text-align: center;
+  margin-top: 40px;
+  padding: 30px;
+}
+
+.course-cta button {
+  margin-top: 16px;
+}
+
+.courses-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 24px;
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.course-item {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.course-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.course-action {
+  margin-top: 12px;
+}

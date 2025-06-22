@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Confirmação de compra</h2>
+
+<mat-dialog-content>
+  <p>
+    Deseja realmente usar <strong>{{ data.name }} creditos</strong> para comprar
+    o curso "<strong>{{ data.price }}</strong
+    >"?
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">No</button>
+  <button mat-raised-button color="primary" (click)="onConfirm()">Yes</button>
+</mat-dialog-actions>

@@ -18,14 +18,11 @@ export class AuthService {
       localStorage.setItem('token', token);
       return { success: true, token };
     } catch (err: any) {
-      return {
-        success: false,
-        error: err.response?.data?.message || 'Erro ao logar',
-      };
+      return false;
     }
   }
 
-  public async getLoggedUser() {
+  public getLoggedUser() {
     const token = localStorage.getItem('token');
     if (!token) return null;
 
@@ -37,6 +34,6 @@ export class AuthService {
   }
 
   public async logout() {
-    localStorage.setItem('token', '');
+    localStorage.removeItem('token');
   }
 }
