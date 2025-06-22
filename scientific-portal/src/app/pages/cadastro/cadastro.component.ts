@@ -25,7 +25,7 @@ export class CadastroComponent {
       this.email,
       this.password,
       this.cpf,
-      this.name
+      this.name,
     );
 
     if (result) {
@@ -35,12 +35,11 @@ export class CadastroComponent {
         icon: 'success',
         confirmButtonText: 'OK',
       });
-      
-      this.email = '' ;
-      this.password = '' ;
-      this.cpf = '' ;
-      this.name = '';
 
+      this.email = '';
+      this.password = '';
+      this.cpf = '';
+      this.name = '';
     } else {
       Swal.fire({
         title: 'Probleminha /:',

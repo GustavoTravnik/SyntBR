@@ -9,41 +9,38 @@
     gap: 1rem;
   }
 
-.login-fields {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  .login-fields {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
-  .login-label {
-    color: white;
-    font-weight: bold;
-    margin-right: 0.5rem;
-    font-size: 14px;
+    .login-label {
+      color: white;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      font-size: 14px;
+    }
+
+    .credits-label {
+      color: yellow;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      font-size: 14px;
+    }
+
+    .login-button {
+      height: 36px;
+      min-width: 80px;
+      padding: 0 16px;
+      font-weight: bold;
+    }
   }
 
-  .credits-label {
-    color: yellow;
-    font-weight: bold;
-    margin-right: 0.5rem;
-    font-size: 14px;
+  .welcome-text {
+    color: #fff;
+    font-weight: 500;
+    padding-left: 1rem;
   }
-
-  .login-button {
-    height: 36px;
-    min-width: 80px;
-    padding: 0 16px;
-    font-weight: bold;
-  }
-}
-
-
-
-.welcome-text {
-  color: #fff;
-  font-weight: 500;
-  padding-left: 1rem;
-}
-
 
   .spacer {
     flex: 1;

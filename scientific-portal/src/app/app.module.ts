@@ -16,9 +16,18 @@ import { SintesesComponent } from './pages/sinteses/sinteses.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { PaymentDialogComponent } from './payment-dialog/payment-dialog.component';
+import { KnmComponent } from './pages/courses/potassium-nitromethanate/knm/knm.component';
 
 @NgModule({
-  declarations: [AppComponent, PaginaInicialComponent, SintesesComponent, SobreComponent, CadastroComponent, PaymentDialogComponent],
+  declarations: [
+    AppComponent,
+    PaginaInicialComponent,
+    SintesesComponent,
+    SobreComponent,
+    CadastroComponent,
+    PaymentDialogComponent,
+    KnmComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,7 +37,7 @@ import { PaymentDialogComponent } from './payment-dialog/payment-dialog.componen
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 import { api } from '../services/axios.config';
 import * as jwt from 'jwt-decode';
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private usersBaseApiPath = "/api/login"
+  private usersBaseApiPath = '/api/login';
 
   public async login(email: string, password: string) {
     try {
@@ -38,6 +37,6 @@ export class AuthService {
   }
 
   public async logout() {
-    localStorage.setItem('token', "");
+    localStorage.setItem('token', '');
   }
 }

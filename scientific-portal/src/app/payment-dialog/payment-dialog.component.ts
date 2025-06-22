@@ -16,7 +16,7 @@ export class PaymentDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<PaymentDialogComponent>,
     private creditService: CreditService,
-    private router: Router
+    private router: Router,
   ) {}
 
   close() {
@@ -52,7 +52,7 @@ export class PaymentDialogComponent {
         icon: 'error',
         confirmButtonText: 'OK',
       });
-      this.router.navigate(["/"]);
+      this.router.navigate(['/']);
     }
   }
 

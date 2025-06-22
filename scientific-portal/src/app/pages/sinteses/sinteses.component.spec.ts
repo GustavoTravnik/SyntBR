@@ -8,9 +8,8 @@ describe('SintesesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SintesesComponent ]
-    })
-    .compileComponents();
+      declarations: [SintesesComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

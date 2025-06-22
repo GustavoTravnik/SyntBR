@@ -5,11 +5,17 @@ import { api } from '../services/axios.config';
   providedIn: 'root',
 })
 export class UserService {
-    private usersBaseApiPath = "/api/user";
+  private usersBaseApiPath = '/api/user';
 
-    public createUser = async(email: string, password: string, cpf: string, name: string) => {
-       return await api.post(this.usersBaseApiPath, {email, password, cpf, name})
-        .then(response => true)
-        .catch(error => false);
-    }
+  public createUser = async (
+    email: string,
+    password: string,
+    cpf: string,
+    name: string,
+  ) => {
+    return await api
+      .post(this.usersBaseApiPath, { email, password, cpf, name })
+      .then((response) => true)
+      .catch((error) => false);
+  };
 }

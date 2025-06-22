@@ -1,7 +1,10 @@
 <h2 mat-dialog-title>Pagamento</h2>
 
 <mat-dialog-content>
-  <p>Por favor, insira o valor do pagamento em reais (somente números, até 6 dígitos):</p>
+  <p>
+    Por favor, insira o valor do pagamento em reais (somente números, até 6
+    dígitos):
+  </p>
   <p>1 crédito a cada real enviado</p>
 
   <mat-form-field appearance="outline" class="input-field">
@@ -18,13 +21,26 @@
 
   <p>Escaneie o QR Code ou envie o valor para a chave pix:</p>
   <p>c4c09e27-4217-48b4-81b4-100320e37827</p>
-  <button  [class.animate]="copied" mat-icon-button color="primary" (click)="copyToClipboard()" aria-label="Copiar chave">Copiar chave
-</button>
+  <button
+    [class.animate]="copied"
+    mat-icon-button
+    color="primary"
+    (click)="copyToClipboard()"
+    aria-label="Copiar chave"
+  >
+    Copiar chave
+  </button>
 
-  <img src="assets/images/qrcode-pix.png" alt="Pagamento" class="payment-image" />
+  <img
+    src="assets/images/qrcode-pix.png"
+    alt="Pagamento"
+    class="payment-image"
+  />
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
   <button mat-button (click)="close()">Fechar</button>
-  <button mat-raised-button color="primary" (click)="confirm()">Realizei a transferência</button>
+  <button mat-raised-button color="primary" (click)="confirm()">
+    Realizei a transferência
+  </button>
 </mat-dialog-actions>

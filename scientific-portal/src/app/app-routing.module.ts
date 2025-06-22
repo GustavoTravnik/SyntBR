@@ -10,11 +10,11 @@ const routes: Routes = [
   { path: '', component: PaginaInicialComponent },
   { path: 'sinteses', component: SintesesComponent, canActivate: [AuthGuard] },
   { path: 'sobre', component: SobreComponent },
-  { path: 'cadastro', component: CadastroComponent }, 
+  { path: 'cadastro', component: CadastroComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
