@@ -3,7 +3,6 @@ import { PaymentDialogComponent } from './payment-dialog/payment-dialog.componen
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
-import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -55,5 +54,9 @@ export class AppComponent {
 
   getCredits() {
     return (this.auth.getLoggedUser() as any)?.credits || 0;
+  }
+
+  getUserName() {
+    return (this.auth.getLoggedUser() as any)?.name || 0;
   }
 }

@@ -18,11 +18,11 @@ export class AuthGuard implements CanActivate {
     private router: Router,
   ) {}
 
-  canActivate(
+  async canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
-  ): boolean | UrlTree {
-    if (this.auth.isLoggedIn()) {
+  ): Promise<boolean | UrlTree> {
+    if (this.auth.isLoggedIn() && await this.auth.fetchLoggedUser()) {
       return true;
     } else {
       Swal.fire({
@@ -30,8 +30,31 @@ export class AuthGuard implements CanActivate {
         text: 'Acesso negado. Faça login primeiro.',
         icon: 'warning',
         confirmButtonText: 'OK',
+        didClose: () => {
+          window.location.href = '/login';
+        }
       });
       return this.router.createUrlTree(['/']);
     }
   }
+}
+
+export default class LoginUtils {
+  static async runWithLoggedUser(asyncMethodToRun: any) {
+    const token = localStorage.getItem('token');
+
+   if (token) {
+      await asyncMethodToRun();
+    } else {
+      Swal.fire({
+        title: 'Validação',
+        text: 'Acesso negado. Faça login primeiro.',
+        icon: 'warning',
+        confirmButtonText: 'OK', 
+        didClose: () => {
+          window.location.href = '/login';
+        }
+      });
+    }
+    }
 }

@@ -12,3 +12,59 @@ body {
 .protected-route {
   font-weight: bold;
 }
+
+.courses-container {
+  .course-topic-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .course-topic-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .course-topic-header h2 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .content-item {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .content-item img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .content-item .text {
+    text-align: justify;
+  }
+
+  @media (max-width: 768px) {
+    .content-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .content-item img {
+      width: 100%;
+    }
+  }
+}

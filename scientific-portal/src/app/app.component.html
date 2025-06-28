@@ -33,7 +33,7 @@
     </button>
   </div>
   <div class="login-fields" *ngIf="loggedIn()">
-    <span class="login-label">Bem vindo</span>
+    <span class="login-label">Bem vindo {{getUserName()}}</span>
     <span class="credits-label">Creditos:</span>
     <span class="credits-label">{{ getCredits() }}</span>
     <button

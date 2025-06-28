@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ConfirmPurchaseModalComponent } from 'src/app/confirm-purchase-modal/confirm-purchase-modal.component';
+import LoginUtils from 'src/app/guards/auth.guard';
 import { CourseService } from 'src/app/services/courses.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -50,6 +51,7 @@ export class SintesesComponent implements OnInit {
   }
 
   public async accessOrBuyCourse(course: CourseListItem) {
+    LoginUtils.runWithLoggedUser(async () => {
     const alreadyPaid = await this.coursesService.userHaveCourse(course.id);
     if (alreadyPaid) {
       this.router.navigate(['/courses', course.url, course.id]);
@@ -80,6 +82,8 @@ export class SintesesComponent implements OnInit {
 
       await this.updateCredits();
     });
+    });
+    
   }
 
   public async updateCredits() {
